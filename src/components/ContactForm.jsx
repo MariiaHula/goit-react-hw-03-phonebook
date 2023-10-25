@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Label, Button } from 'styles/Styles';
-
+import styled from 'styled-components';
 class ContactForm extends Component {
   state = {
     name: '',
@@ -36,10 +35,10 @@ class ContactForm extends Component {
     const addContactOnSubmit = this.handleAddNewContactOnSubmit;
 
     return (
-      <form onSubmit={addContactOnSubmit}>
+      <Form onSubmit={addContactOnSubmit}>
         <Label>
           Name
-          <input
+          <Input
             type="text"
             name="name"
             value={name}
@@ -49,7 +48,7 @@ class ContactForm extends Component {
         </Label>
         <Label>
           Number
-          <input
+          <Input
             type="tel"
             name="number"
             value={number}
@@ -58,9 +57,43 @@ class ContactForm extends Component {
           />
         </Label>
         <Button type="submit">Add Contact</Button>
-      </form>
+      </Form>
     );
   }
 }
 
 export default ContactForm;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+`;
+
+const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+`;
+
+const Input = styled.input`
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+`;
+
+const Button = styled.button`
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
