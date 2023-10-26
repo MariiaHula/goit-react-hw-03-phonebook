@@ -6,7 +6,8 @@ import Filter from './Filter';
 import ContactList from './ContactList';
 import Notification from './Notification';
 import styled from 'styled-components';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export class App extends Component {
   state = {
     contacts: contactData,
@@ -41,7 +42,8 @@ export class App extends Component {
     );
 
     if (nameExists) {
-      alert(`${contactData.name} is already in your contacts.`);
+      toast.info(`${contactData.name} is already in your contacts.`);
+      return;
     } else {
       const newContact = { id: nanoid(), ...contactData };
       this.setState(prevState => ({

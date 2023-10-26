@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
 import './index.css';
 import { createGlobalStyle } from 'styled-components';
+import { ToastContainer } from 'react-toastify';
 
 const Global = createGlobalStyle`
 * {
@@ -13,6 +14,7 @@ const Global = createGlobalStyle`
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ToastContainer autoClose={1500} />
     <Global />
     <App />
   </React.StrictMode>
