@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import contactData from '../contactData.json';
+import contactData from '../../../src/contactData.json';
 import { nanoid } from 'nanoid';
-import ContactForm from './ContactForm';
-import Filter from './Filter';
-import ContactList from './ContactList';
-import Notification from './Notification';
-import styled from 'styled-components';
+import ContactForm from '../ContactForm/ContactForm';
+import Filter from '../Filter/Filter';
+import ContactList from '../ContactList/ContactList';
+import Notification from '../Notification/Notification';
+import { Wrapper } from './App.styled';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export class App extends Component {
@@ -90,10 +90,3 @@ export class App extends Component {
     );
   }
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-`;

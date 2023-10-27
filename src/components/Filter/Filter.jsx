@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { FilterInput } from './Filter.styled';
 
 const Filter = ({ filteredContacts }) => {
   return (
@@ -17,11 +17,3 @@ Filter.propTypes = {
 };
 
 export default Filter;
-
-const FilterInput = styled.input`
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 300px;
-  margin-bottom: 10px;
-`;
